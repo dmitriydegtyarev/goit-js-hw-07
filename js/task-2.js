@@ -1,13 +1,19 @@
-import users from './users.js';
+const ingredients = [
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
+];
 
-const getUsersWithEyeColor = (users, color) => {
-  const colorEyes = [];
-  users.forEach(user => {
-    if (user.eyeColor === color) {
-      colorEyes.push(user);
-    }
-  });
-  return colorEyes; 
-};
+const ulRef = document.querySelector('#ingredients');
 
-console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+const liRefs = ingredients.map(ingredient => {
+  const liRef = document.createElement('li');
+  liRef.textContent = ingredient;
+  console.log(ingredient);
+  return liRef;
+});
+
+ulRef.append(...liRefs);
