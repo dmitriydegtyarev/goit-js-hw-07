@@ -1,16 +1,15 @@
-import users from './users.js';
+const decrementBtnRef = document.querySelector("[data-action='decrement']");
+const incrementBtnRef = document.querySelector("[data-action='increment']");
+const valueRef = document.querySelector('#value');
 
-const getInactiveUsers = users => {
-  // const notActiveUsers = [];
-  // users.forEach(user => {
-  //   if (user.isActive === false) {
-  //     notActiveUsers.push(user);
-  //   }
-  // });
-  // return notActiveUsers; 
+let counterValue = 0;
 
-  const notActiveUsers = users.filter(user => user.isActive === false);
-  return notActiveUsers;
+const increment = () => {  
+  valueRef.textContent = counterValue += 1;
+};
+const decrement = () => {
+  valueRef.textContent = counterValue -= 1
 };
 
-console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+decrementBtnRef.addEventListener("click", decrement);
+incrementBtnRef.addEventListener("click", increment);
