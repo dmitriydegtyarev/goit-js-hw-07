@@ -1,13 +1,13 @@
-import users from './users.js';
+const listRef = document.querySelectorAll('.item');
+console.log(`В списке ${listRef.length} категории.`);
 
-const getUserNames = users => {
-  const userName = [];
-  users.forEach(user => {
-    userName.push(user.name);
-  });
+const itemsList = listRef.forEach((itemsList) => {
+  
+  // console.log(itemsList.children[0].textContent);
+  const titleList = itemsList.children[0].textContent;
 
-  return userName;
-};
+  // console.log(itemsList.children[1].querySelectorAll("li").length);
+  const quantity = itemsList.children[1].querySelectorAll("li").length;
 
-console.log(getUserNames(users));
-// [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
+  console.log(`Категория: ${titleList}`, ('\n'), `Количество элементов: ${quantity}`);
+});
