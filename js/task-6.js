@@ -1,11 +1,24 @@
-import users from './users.js';
+const inputRef = document.querySelector('#validation-input');
 
-const getUsersWithAge = (users, min, max) => {
-  const user = users.filter(user => user.age >= min && user.age <= max);
-  return user;
-};
+const checkValueInput = (inputText) => {
+  const dataLength = Number(inputRef.dataset.length);
 
-console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
+  if (inputRef.value.length !== dataLength) {
+    inputRef.classList.add('invalid');
+  } else {
+    inputRef.classList.add('valid');
+  }
+}
 
-console.log(getUsersWithAge(users, 30, 40));
-// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+const clearInputClass = () => {
+  if (inputRef.classList.contains('valid')) {    
+    inputRef.classList.remove('valid');
+  }
+    
+  if (inputRef.classList.contains('invalid')) {
+    inputRef.classList.remove('invalid');
+  }
+}
+
+inputRef.addEventListener('blur', checkValueInput);
+inputRef.addEventListener('focus', clearInputClass);
