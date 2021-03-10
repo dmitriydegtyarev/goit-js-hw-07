@@ -1,14 +1,8 @@
-import users from './users.js';
+const refs = {
+  renderBtn: document.querySelector('[data-action="render"]'),
+  destroyBtn: document.querySelector('[data-action="destroy"]'),
+  inputNumber: document.querySelector('input'),
+  gallery: document.querySelector('#boxes'),
+}
 
-const getUsersWithFriend = (users, friendName) => {
-  const usersFriends = [];
-  users.forEach(user => {
-    if (user.friends.includes(friendName)) {
-      usersFriends.push(user.name);
-    }  
-  });
-  return usersFriends;
-};
-
-console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+console.log(refs.inputNumber);

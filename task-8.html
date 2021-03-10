@@ -7,14 +7,36 @@
   <title>Document</title>
 </head>
 
-<h1>Homework # 6</h1>
+<h1>Homework # 7</h1>
 <h2>Задание 8</h2>
-<p>Массив имен всех пользователей у которых есть друг с указанным именем.</p>
+<p>Напиши скрипт создания и очистки коллекции элементов. Пользователь вводит количество элементов в input и нажимает
+  кнопку
+  Создать, после чего рендерится коллекция. При нажатии на кнопку Очистить, коллекция элементов очищается.</p>
+
+<p>Создай функцию createBoxes(amount), которая принимает 1 параметр amount - число. Функция создает столько div, сколько
+  указано в amount и добавляет их в div#boxes.</p>
+
+<p>Каждый созданный div:</p>
+
+<ul>
+  <li>Имеет случайный rgb цвет фона</li>
+  <li>Размеры самого первого div - 30px на 30px</li>
+  <li>Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px</li>
+</ul>
+
+<p>Создай функцию destroyBoxes(), которая очищает div#boxes.</p>
+
+<div id="controls">
+  <input type="number" min="0" max="100" step="1" />
+  <button type="button" data-action="render">Создать</button>
+  <button type="button" data-action="destroy">Очистить</button>
+</div>
+
+<div id="boxes"></div>
 
 <a href="./index.html">Назад на главную</a>
 
 <body>
-  <script src="./js/users.js" type="module"></script>
   <script src="./js/task-8.js" type="module"></script>
 </body>
 
