@@ -1,6 +1,6 @@
 const inputRef = document.querySelector('#validation-input');
 
-const checkValueInput = (inputText) => {
+const checkValueInput = () => {
   const dataLength = Number(inputRef.dataset.length);
 
   if (inputRef.value.length !== dataLength) {
