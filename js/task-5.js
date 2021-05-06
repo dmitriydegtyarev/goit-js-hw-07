@@ -1,12 +1,16 @@
-const inputRef = document.querySelector('#name-input');
-const spanRef = document.querySelector('#name-output');
+const refs = {
+  input: document.querySelector('#name-input'),
+  span: document.querySelector('#name-output')
+}
+
+const { input, span } = refs;
 
 const changeSpanOutputText = (inputText) => {
   if (inputText.currentTarget.value.length > 0) {
-    spanRef.textContent = inputText.currentTarget.value;
+    span.textContent = inputText.currentTarget.value;
   } else {
-    spanRef.textContent = 'незнакомец';
+    span.textContent = 'незнакомец';
   }
 };
 
-inputRef.addEventListener("input", changeSpanOutputText);
+input.addEventListener("input", changeSpanOutputText);

@@ -40,6 +40,7 @@ const createBoxes = (amount) => {
 
 const destroyBoxes = () => {
   refs.gallery.innerHTML = '';
+  refs.inputNumber.value = '';
 }
 
 refs.renderBtn.addEventListener('click', createBoxes);
